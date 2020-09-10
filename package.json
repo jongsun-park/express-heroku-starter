@@ -14,8 +14,9 @@
   },
   "scripts": {
     "start": "node server.js",
-    "build:client": "react-scripts build",
+    "build:client": "react-scripts build && yarn global add serve",
     "start:client": "react-scripts start",
+    "start:heroku": "heroku local web",
     "heroku-postbuild": "yarn install && yarn build:client"
   },
   "eslintConfig": {
