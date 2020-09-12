@@ -3,18 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "jwt-decode": "^3.0.0-beta.2",
+    "mime-types": "^2.1.27",
+    "node-sass": "^4.14.1",
+    "openid": "^2.0.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "session-file-store": "^1.4.0",
+    "styled-components": "^5.2.0",
+    "xero-node": "^4.8.1"
   },
   "scripts": {
-    "start": "node server.js",
-    "build:client": "react-scripts build && yarn global add serve",
+    "start": "node -r esm index.js",
+    "start:server": "nodemon --watch server --watch api -r esm index.js",
+    "build:client": "react-scripts build",
     "start:client": "react-scripts start",
     "start:heroku": "heroku local web",
     "heroku-postbuild": "yarn install && yarn build:client"
